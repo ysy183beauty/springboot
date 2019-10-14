@@ -30,7 +30,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
+    <!--打包成可执行的jar -->
     <build>
         <plugins>
             <plugin>
