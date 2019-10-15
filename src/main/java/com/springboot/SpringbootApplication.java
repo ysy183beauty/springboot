@@ -8,6 +8,7 @@ import org.springframework.context.annotation.ImportResource;
 @SpringBootApplication
 //注入spring的配置文件
 //@ImportResource(locations ={"classpath:/beans.xml"})
+//java -jar spring-boot-02-conﬁg-0.0.1-SNAPSHOT.jar --spring.proﬁles.active=dev
 public class SpringbootApplication {
 
     //启动程序

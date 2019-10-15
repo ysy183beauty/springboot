@@ -10,3 +10,22 @@
 #    name: 花花
 #    age: 2
 #  last-name: zhangsan
+
+
+#server:
+#  port: 8080
+#spring:
+#  profiles:
+#    active: product
+#---
+#server:
+#  port: 8083
+#spring:
+#  profiles: dev
+#---
+#---
+#server:
+#  port: 8084
+#spring:
+#  profiles: product
+#---

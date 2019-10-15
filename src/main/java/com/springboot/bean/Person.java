@@ -17,7 +17,7 @@ import java.util.Map;
 @Component
 //自动映射为一个实体
 @ConfigurationProperties(prefix ="person")  //默认从全局配置文件中读取,指定前缀
-@PropertySource(value ={"classpath:/person.properties"}) //加载某个配置文件中的属性
+//@PropertySource(value ={"classpath:/person.properties"}) //加载某个配置文件中的属性
 //@Validated person下面的字段需要实现校验
 public class Person {
     /**
