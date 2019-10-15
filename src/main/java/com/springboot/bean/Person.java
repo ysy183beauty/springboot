@@ -1,6 +1,7 @@
 package com.springboot.bean;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -13,12 +14,24 @@ import java.util.Map;
  * prefix ="person",配置文件中哪个下面的属性进行一一映射
  * 只有这个组件是容器(Component)中的组件，才能容器ConfigurationProperties提供的功能
  */
-@Component  //自动映射为一个实体
-@ConfigurationProperties(prefix ="person")
+@Component
+//自动映射为一个实体
+@ConfigurationProperties(prefix ="person")  //默认从全局配置文件中读取,指定前缀
+@PropertySource(value ={"classpath:/person.properties"}) //加载某个配置文件中的属性
+//@Validated person下面的字段需要实现校验
 public class Person {
+    /**
+     * <bean class="Person">
+     *      <property name="lastName" value="字面量/${key}从环境变量、配置文件中获取值/#{SpEL}"></property>
+     * <bean/>
+     */
     //基本类型
+    //@Value("${person.last-name}")
+    // @Email lastName必须填写邮箱格式
     private  String lastName;
+    //@Value("#{11*2}")
     private Integer age;
+    //@Value("true")
     private Boolean boss;
     private Date birth;
 
